@@ -49,12 +49,13 @@ From there we will take the average rating of each recipe and replace each ratin
 
 Here is the head of the dataframe 
 
-I will implement the df here* 
+dfhead**
 
 # Bivariate Analysis
 
-Text {I performed Bivariate Analysis on the dataset at multiple columns with the average rating columns}
+I performed Bivariate Analysis on the dataset at multiple columns with the average rating columns
 
-I will implement the pics*
+Pics**
 
-Text { As you can see as the levels of Sugar, Sodium, and Protein all increase the rating also increases. }
+As you can see as the levels of Sugar, Sodium, and Protein all increase the rating also increases.
+
