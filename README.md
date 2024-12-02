@@ -1,11 +1,7 @@
 # Nutrient-Analysis
-# This is a thing
 
-remote_theme: pages-themes/slate@v0.2.0
-plugins:
-- jekyll-remote-theme
 
-### Statistical Analysis of Nutrients of Food and Their Taste
+# Statistical Analysis of Nutrients of Food and Their Taste
 
 ## Introduction
 
@@ -13,7 +9,7 @@ In this project I did analysis of thousands of different recipes from Food.com. 
 
 The nutrition of food is very important when it comes to taste. Over the past few decades it has come to light that many companies add extra sugar, salt, or fat to make their product taste better and in turn make people buy it again. In this analysis we will be looking at how sugar, salt, and fat affect the taste of food.
 
-# Recipes Dataset
+### Recipes Dataset
 
 | Column Name | Description |
 | -------- | -------- |
@@ -28,7 +24,7 @@ The nutrition of food is very important when it comes to taste. Over the past fe
 | ‘steps’ | Text for recipe steps |
 | ‘description’ | Description of the recipe from the contributor | 
 
-# Reviews Dataset
+### Reviews Dataset
 
 | Column Name | Description |
 | -------- | -------- |
@@ -41,7 +37,7 @@ The nutrition of food is very important when it comes to taste. Over the past fe
 
 ## Data Cleaning and Exploring the Data
 
-# Data Cleaning
+### Data Cleaning
 
 All of the columns in both datasets apart from recipe_id, rating in the Reviews Dataset and nutrition, id from the recipes dataset will not help answer the question so they are dropped. From there we can merge the two datasets on recipe_id and id so that each rating is adjacent to its respective nutritional content. After that we break up the nutrition column into the following individual columns : calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), and carbohydrates (PDV)
 
@@ -51,7 +47,7 @@ Here is the head of the dataframe
 
 dfhead**
 
-# Bivariate Analysis
+### Bivariate Analysis
 
 I performed Bivariate Analysis on the dataset at multiple columns with the average rating columns
 
@@ -59,3 +55,4 @@ Pics**
 
 As you can see as the levels of Sugar, Sodium, and Protein all increase the rating also increases.
 
+### Univariate Analysis
