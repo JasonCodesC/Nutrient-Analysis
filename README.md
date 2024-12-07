@@ -149,14 +149,12 @@ I performed Bivariate Analysis on multiple columns within my dataset with the av
   height="600"
   frameborder="0"
 ></iframe>
-
 <iframe
   src="pics/DS398SALT.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
-
 <iframe
   src="pics/DS398PROT.html"
   width="800"
