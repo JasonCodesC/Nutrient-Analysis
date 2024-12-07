@@ -61,81 +61,74 @@ Here is the head of the dataframe
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>id</th>
       <th>calories</th>
       <th>total_fat</th>
       <th>sugar</th>
-      <th>...</th>
-      <th>avg_sodium</th>
-      <th>avg_total_fat</th>
-      <th>avg_sugar</th>
-      <th>avg_carbs</th>
+      <th>sodium</th>
+      <th>protein</th>
+      <th>saturated_fat</th>
+      <th>carbs</th>
+      <th>avg_rating</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>306785.0</td>
       <td>95.3</td>
       <td>1.0</td>
       <td>50.0</td>
-      <td>...</td>
       <td>16.0</td>
-      <td>1.0</td>
-      <td>50.0</td>
+      <td>5.0</td>
+      <td>0.0</td>
       <td>7.0</td>
+      <td>5.00</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>310237.0</td>
       <td>143.5</td>
       <td>5.0</td>
       <td>25.0</td>
-      <td>...</td>
       <td>3.0</td>
-      <td>5.0</td>
-      <td>25.0</td>
+      <td>10.0</td>
+      <td>3.0</td>
       <td>7.0</td>
+      <td>5.00</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>321038.0</td>
       <td>182.4</td>
       <td>2.0</td>
       <td>50.0</td>
-      <td>...</td>
       <td>7.0</td>
-      <td>2.0</td>
-      <td>50.0</td>
+      <td>11.0</td>
+      <td>1.0</td>
       <td>13.0</td>
+      <td>5.00</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>342209.0</td>
       <td>658.2</td>
       <td>45.0</td>
       <td>151.0</td>
-      <td>...</td>
       <td>35.0</td>
-      <td>45.0</td>
-      <td>151.0</td>
+      <td>24.0</td>
+      <td>72.0</td>
       <td>29.0</td>
+      <td>4.38</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>424415.0</td>
       <td>228.2</td>
       <td>2.0</td>
       <td>2.0</td>
-      <td>...</td>
       <td>8.0</td>
-      <td>2.0</td>
-      <td>2.0</td>
+      <td>9.0</td>
+      <td>1.0</td>
       <td>15.0</td>
+      <td>4.83</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 15 columns</p>
 </div>
 
 
@@ -156,7 +149,7 @@ I performed Bivariate Analysis on multiple columns within my dataset with the av
   frameborder="0"
 ></iframe>
 <iframe
-  src="pics/DS398PROT.html"
+  src="pics/file-name.html"
   width="800"
   height="460"
   frameborder="0"
@@ -166,7 +159,7 @@ As you can see as the levels of Sugar, Sodium, and Protein all increase the rati
 ### Univariate Analysis
 
 <iframe
-  src="pics/DS398aa.html"
+  src="pics/398FF.html"
   width="800"
   height="460"
   frameborder="0"
