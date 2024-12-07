@@ -161,7 +161,6 @@ I performed Bivariate Analysis on multiple columns within my dataset with the av
   height="600"
   frameborder="0"
 ></iframe>
-
 As you can see as the levels of Sugar, Sodium, and Protein all increase the rating also increases. It is worth to note that the relationships aren't exactly linear so our predictions will not be perfect because some points have different ratings but the same amount of nutrients. It also is worth to note that protein has some low rated outliers so there may be more of a negative correlation compared to Sugar and Sodium.
 
 ### Univariate Analysis
@@ -169,7 +168,7 @@ As you can see as the levels of Sugar, Sodium, and Protein all increase the rati
 <iframe
   src="pics/DS398aa.html"
   width="800"
-  height="600"
+  height="500"
   frameborder="0"
 ></iframe>
 
@@ -262,16 +261,16 @@ I chose not to impute any missing values because there was only one so it would 
 
 ## Framing a Prediction Problem
 
-We are going to be predicting the rating of a recipe based off of the sugar, total fat, and salt content of the recipe. Initally for my baseline model I chose a regression model but for my final model there seemed to be no improvements so I ended up using a classifier. This is multiclass classification because there a five different responses the model could give. I used accuracy as my scoring because it is typically better for multiclass classification. At the time of prediction we will know all of the values we are training the data on so there are no restrictions.
+We are initally going to be predicting the rating of a recipe based off of the `sugar`, `total_fat`, and `sodium` content of the recipe. Initally for my baseline model I chose a regression model but for my final model there seemed to be no improvements so I ended up using a classifier. This is multiclass classification because there a five different responses the model could give. I used accuracy as my scoring because it is typically better for multiclass classification. At the time of prediction we will know all of the values we are training the data on so there are no restrictions. We will also come to add two more features to the final model.
 
 ## Baseline Model
 
-My Baseline Model is a simple linear regression model. The features are the previously stated above total fat, sugar, and salt which are all quantatative features and because of that I did not need to encode or change the values. The model has a training Mean Squared Error of 1.1909 which is good considering when the nutrients are small there is high variance in the rating. The test Mean Squared Error is 1.18375 which is better than the testing accuracy and shows that our model is not overfitting.
+My Baseline Model is a simple linear regression model. The features are the previously stated above `total_fat`, `sugar`, and `sodium` which are all quantatative features and because of that I did not need to encode or change the values. The model has a training Mean Squared Error of 1.1909 which is good considering when the nutrients are small there is high variance in the rating. The test Mean Squared Error is 1.18375 which is better than the testing accuracy and shows that our model is not overfitting.
 
 ## Final Model
 
-For my Final Model I decided to add two new features, `saturated fat (PDV)` and `protein`. I decided to get rid of `total fat` because a smaller subset may help predictions better. I decided to add protein because it will probably help us be able to predict lower ratings better based off what we saw in the univariate analysis, I think the low concentrations of protein could also help us sift through the data better for a good model.
+For my Final Model I decided to add two new features, `saturated_fat` and `protein`. I decided to get rid of `total_fat` because a smaller subset may help predictions better. I decided to add `protein` because it will probably help us be able to predict lower ratings better based off what we saw in the earlier analysis, I think the low concentrations of protein could also help us sift through the data better for a good model.
 
-I initally used built a pipeline including a ridge regression model. I first used the StandardScalar and QuantileTransfomer to normalize the features and create a normal distribution which I found helped predictions. I used GridSearchCV to find the best hyperparamters and then fit the model and obtained a training Mean Squared Error of 1.19077 and a testing Mean Squared Error 1.18370. This is better than our baseline model but not by enough so I decided to see if trying out classification would help. 
+I initally used built a pipeline including a ridge regression model. I first used the `StandardScalar` and `QuantileTransfomer` to normalize the features and create a normal distribution which I found helped predictions. I used `GridSearchCV` to find the best hyperparamters and then fit the model and obtained a training Mean Squared Error of 1.19077 and a testing Mean Squared Error 1.18370. This is better than our baseline model but not by enough so I decided to see if trying out classification would help. 
 
-In my classification model I first grouped the avg_rating into buckets: 1, 2, 3, 4, 5. All of the ratings were rounded up so a value less than or equal to 1 would become 1 and so on. Using the all of the other same features as the other final model I again used GridSearchCV to determine that 49 neighbors was the best hyperparamter for the model. I again put StandardScalar and QuantileTransformer into a pipeline with the classifier. The model achieved a better Mean Squared Error than both the baseline model and the previous final model. The training was 1.16961 and the testing was 1.1667 and the accuracy of the model was 69.93%. I think these results are quite good, in the Bivariate analysis we saw that much of the data contained points with the same input values but vastly different output values. Due to the data behaving like that I think the classifer ended up working very well.
+In my classification model I first grouped the `avg_rating` into buckets: 1, 2, 3, 4, 5. All of the ratings were rounded up so a value less than or equal to 1 would become 1 and so on. Using the all of the other same features as the other final model I again used `GridSearchCV` to determine that 49 neighbors was the best hyperparamter for the model. I again put `StandardScalar` and `QuantileTransformer` into a pipeline with the classifier. The model achieved a better Mean Squared Error than both the baseline model and the previous final model. The training was 1.16961 and the testing was 1.1667 and the accuracy of the model was 69.93%. This error is smaller than our baseline model and thus a better model. I think these results are quite good, in the Bivariate analysis we saw that much of the data contained points with the same input values but vastly different output values. Due to the data behaving like that I think the classifer ended up working very well. 
