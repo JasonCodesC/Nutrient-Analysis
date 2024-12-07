@@ -43,25 +43,222 @@ From there we will take the average rating of each recipe and replace each ratin
 
 Here is the head of the dataframe 
 
-dfhead**
+div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>calories</th>
+      <th>total_fat</th>
+      <th>sugar</th>
+      <th>...</th>
+      <th>avg_sodium</th>
+      <th>avg_total_fat</th>
+      <th>avg_sugar</th>
+      <th>avg_carbs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>306785.0</td>
+      <td>95.3</td>
+      <td>1.0</td>
+      <td>50.0</td>
+      <td>...</td>
+      <td>16.0</td>
+      <td>1.0</td>
+      <td>50.0</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>310237.0</td>
+      <td>143.5</td>
+      <td>5.0</td>
+      <td>25.0</td>
+      <td>...</td>
+      <td>3.0</td>
+      <td>5.0</td>
+      <td>25.0</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>321038.0</td>
+      <td>182.4</td>
+      <td>2.0</td>
+      <td>50.0</td>
+      <td>...</td>
+      <td>7.0</td>
+      <td>2.0</td>
+      <td>50.0</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>342209.0</td>
+      <td>658.2</td>
+      <td>45.0</td>
+      <td>151.0</td>
+      <td>...</td>
+      <td>35.0</td>
+      <td>45.0</td>
+      <td>151.0</td>
+      <td>29.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>424415.0</td>
+      <td>228.2</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>...</td>
+      <td>8.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>15.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 15 columns</p>
+</div>
+
 
 ### Bivariate Analysis
 
 I performed Bivariate Analysis on the dataset at multiple columns with the average rating columns
 
-Pics**
+<iframe
+  src="pics/DS398SUGAR.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
-As you can see as the levels of Sugar, Sodium, and Protein all increase the rating also increases. It is worth to note that the relationships aren't exactly linear so our predictions will not be perfect because some points have different ratings but the same nutrients.
+
+<iframe
+  src="pics/DS398SALT.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+
+<iframe
+  src="pics/DS398PROT.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+
+As you can see as the levels of Sugar, Sodium, and Protein all increase the rating also increases. It is worth to note that the relationships aren't exactly linear so our predictions will not be perfect because some points have different ratings but the same nutrients. It also ism worth to note that protein has some low rated outliers so there may be more of a negative correlation compared to Sugar and Sodium.
 
 ### Univariate Analysis
 
-Protein pics**
+<iframe
+  src="pics/DS398aa.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 
 The distribution shows that most recipes contain less than 30 grams of protein. Although protein is healthy it can cause some people gut digestions and just overall not taste as good so most recipes contain little protein.
 
 ### Interesting Aggregates
 
-*table
+div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>avg_calories</th>
+      <th>avg_protein</th>
+      <th>avg_sodium</th>
+      <th>avg_total_fat</th>
+      <th>avg_sugar</th>
+      <th>avg_carbs</th>
+    </tr>
+    <tr>
+      <th>calorie_bins</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Low_Cals</th>
+      <td>227.76</td>
+      <td>19.06</td>
+      <td>18.61</td>
+      <td>15.35</td>
+      <td>37.94</td>
+      <td>7.64</td>
+    </tr>
+    <tr>
+      <th>Medium_Cals</th>
+      <td>612.02</td>
+      <td>54.08</td>
+      <td>39.18</td>
+      <td>48.46</td>
+      <td>73.66</td>
+      <td>17.69</td>
+    </tr>
+    <tr>
+      <th>High_Cals</th>
+      <td>1070.07</td>
+      <td>82.71</td>
+      <td>62.42</td>
+      <td>93.48</td>
+      <td>133.99</td>
+      <td>29.13</td>
+    </tr>
+    <tr>
+      <th>Very_High_Cals</th>
+      <td>2222.19</td>
+      <td>110.99</td>
+      <td>109.98</td>
+      <td>177.28</td>
+      <td>449.81</td>
+      <td>80.81</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 
 I created a table ranging from low to high calories into the bins 0-450, 450-900, 900-1350, 1350-Max. This table shows the average calories and nutrients for the recipes in each given bin. We can see from this that protein and carbs seem to grow slowly as the calories increase compared to fat and sugar which grow much faster.
 
@@ -79,8 +276,8 @@ My Baseline Model is a simple linear regression model. The features are the prev
 
 ## Final Model
 
-For my Final Model I decided to add two new features, 'saturated fat (PDV)' and 'protein'. I decided to get rid of 'total fat' because a smaller subset may help predictions better. I decided to add protein because it will probably help us be able to predict lower ratings better based off what we saw in the univariate analysis.
+For my Final Model I decided to add two new features, 'saturated fat (PDV)' and 'protein'. I decided to get rid of 'total fat' because a smaller subset may help predictions better. I decided to add protein because it will probably help us be able to predict lower ratings better based off what we saw in the univariate analysis, I think the low concentrations of protein could also help us sift through the data better for a good model.
 
 I initally used built a pipeline including a ridge regression model. I first used the StandardScalar and QuantileTransfomer to normalize the features and create a normal distribution which I found helped predictions. I used GridSearchCV to find the best hyperparamters and then fit the model and obtained a training Mean Squared Error of 1.19077 and a testing Mean Squared Error 1.18370. This is better than our baseline model but not by enough so I decided to see if trying out classification would help. 
 
-In my classification model I just used StandardScalar and the KNeighborsClassifier. I also grouped the avg_rating into buckets: 1, 2, 3, 4, 5. All of the ratings were rounded up so a value less than or equal to 1 would become 1 and so on. Using the all of the other same features as the other final model I again used GridSearchCV to determine that 49 neighbors was the best hyperparamter for the model. I also used StandardScalar and QuantileTransformer again. The model achieved a better Mean Squared Error than both the baseline model and the previous final model. The training was 1.16961 and the testing was 1.1667 and the accuracy of the model was 69.93%. I think these results are quite good, in the Bivariate analysis we saw that much of the data contained points with the same input values but vastly different output values. Due to the data behaving like that I think the classifer ended up working very well.
+In my classification model I first grouped the avg_rating into buckets: 1, 2, 3, 4, 5. All of the ratings were rounded up so a value less than or equal to 1 would become 1 and so on. Using the all of the other same features as the other final model I again used GridSearchCV to determine that 49 neighbors was the best hyperparamter for the model. I again put StandardScalar and QuantileTransformer into a pipeline with the classifier. The model achieved a better Mean Squared Error than both the baseline model and the previous final model. The training was 1.16961 and the testing was 1.1667 and the accuracy of the model was 69.93%. I think these results are quite good, in the Bivariate analysis we saw that much of the data contained points with the same input values but vastly different output values. Due to the data behaving like that I think the classifer ended up working very well.
