@@ -37,7 +37,7 @@ The nutrition of food is very important when it comes to taste. Over the past fe
 
 ### Data Cleaning
 
-All of the columns in both datasets apart from recipe_id, rating in the Reviews Dataset and nutrition, id from the recipes dataset will not help us in this quest so they are dropped. From there we can merge the two datasets on recipe_id and id so that each rating is adjacent to its respective nutritional content. After that we break up the nutrition column into the following individual columns : calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), and carbohydrates (PDV)
+All of the columns in both datasets apart from `recipe_id` and `rating` in the Reviews Dataset and `nutrition` and `id` from the recipes dataset will not help us in this quest so they are dropped. From there we can merge the two datasets on recipe_id and id so that each rating is adjacent to its respective nutritional content. After that we break up the nutrition column into the following individual columns : `calories` (#), `total_fat` (PDV), `sugar` (PDV), `sodium` (PDV), `protein` (PDV), `saturated fat` (PDV), and `carbohydrates` (PDV)
 
 From there we will take the average rating of each recipe and replace each rating with that average. This makes predictions more accurate and easier. There was also one null value that we will drop because it won't make a difference across the whole dataset. We also drop duplicates to avoid redundancy. We also drop recipes with above 5000 calories so it doesn’t skew predictions and visualizations as much and considering recipes with more than 5000 calories are much less than 1% of the dataset it won’t matter. 
 
@@ -146,19 +146,19 @@ I performed Bivariate Analysis on multiple columns within my dataset with the av
 <iframe
   src="pics/DS398SUGAR.html"
   width="800"
-  height="600"
+  height="460"
   frameborder="0"
 ></iframe>
 <iframe
   src="pics/DS398SALT.html"
   width="800"
-  height="600"
+  height="460"
   frameborder="0"
 ></iframe>
 <iframe
   src="pics/DS398PROT.html"
   width="800"
-  height="600"
+  height="460"
   frameborder="0"
 ></iframe>
 As you can see as the levels of Sugar, Sodium, and Protein all increase the rating also increases. It is worth to note that the relationships aren't exactly linear so our predictions will not be perfect because some points have different ratings but the same amount of nutrients. It also is worth to note that protein has some low rated outliers so there may be more of a negative correlation compared to Sugar and Sodium.
@@ -168,7 +168,7 @@ As you can see as the levels of Sugar, Sodium, and Protein all increase the rati
 <iframe
   src="pics/DS398aa.html"
   width="800"
-  height="500"
+  height="460"
   frameborder="0"
 ></iframe>
 
