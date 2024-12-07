@@ -139,19 +139,19 @@ I performed Bivariate Analysis on multiple columns within my dataset with the av
 <iframe
   src="pics/DS398SUGAR.html"
   width="800"
-  height="460"
+  height="445"
   frameborder="0"
 ></iframe>
 <iframe
   src="pics/DS398SALT.html"
   width="800"
-  height="460"
+  height="445"
   frameborder="0"
 ></iframe>
 <iframe
   src="pics/398FF.html"
   width="800"
-  height="460"
+  height="445"
   frameborder="0"
 ></iframe>
 As you can see as the levels of Sugar, Sodium, and Protein all increase the rating also increases. It is worth to note that the relationships aren't exactly linear so our predictions will not be perfect because some points have different ratings but the same amount of nutrients. It also is worth to note that protein has some low rated outliers so there may be more of a negative correlation compared to Sugar and Sodium.
@@ -161,7 +161,7 @@ As you can see as the levels of Sugar, Sodium, and Protein all increase the rati
 <iframe
   src="pics/file-name.html"
   width="800"
-  height="460"
+  height="445"
   frameborder="0"
 ></iframe>
 
