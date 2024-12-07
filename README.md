@@ -3,9 +3,9 @@
 
 ## Introduction
 
-In this project I did analysis of thousands of different recipes from Food.com. The two datasets were originally scraped by Bodhisattwa Prasad Majumder, Shuyang L∗, Jianmo Ni, and Julian McAuley  of UCSD. The datasets contain much information; such as ingredients, time to prepare and more but in this analysis we will particularly be looking at the nutrition. We have a lot of data to look at, after cleaning we have 83,562 rows of information.
+In this project I did analysis on thousands of different recipes from Food.com. The two datasets were originally scraped by Bodhisattwa Prasad Majumder, Shuyang Li, Jianmo Ni, and Julian McAuley  of UCSD. The datasets contain much information; such as ingredients, time to prepare and more but in this analysis we will particularly be looking at the nutrition. We have a lot of data to look at, after cleaning we have 83,562 rows of information.
 
-The nutrition of food is very important when it comes to taste. Over the past few decades it has come to light that many companies add extra sugar, salt, or fat to make their product taste better and in turn make people buy it again. In this analysis we will be looking at how sugar, salt, and fat affect the taste of food.
+The nutrition of food is very important when it comes to taste. Over the past few decades it has come to light that many companies add extra sugar, salt, or fat to make their product taste better and in turn make people buy it again. In this analysis we will be looking at how the specific nutrition of sugar, salt, and fat, and other nutrients affect the taste of food.
 
 ### Recipes Dataset
 
@@ -37,13 +37,13 @@ The nutrition of food is very important when it comes to taste. Over the past fe
 
 ### Data Cleaning
 
-All of the columns in both datasets apart from recipe_id, rating in the Reviews Dataset and nutrition, id from the recipes dataset will not help answer the question so they are dropped. From there we can merge the two datasets on recipe_id and id so that each rating is adjacent to its respective nutritional content. After that we break up the nutrition column into the following individual columns : calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), and carbohydrates (PDV)
+All of the columns in both datasets apart from recipe_id, rating in the Reviews Dataset and nutrition, id from the recipes dataset will not help us in this quest so they are dropped. From there we can merge the two datasets on recipe_id and id so that each rating is adjacent to its respective nutritional content. After that we break up the nutrition column into the following individual columns : calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), and carbohydrates (PDV)
 
 From there we will take the average rating of each recipe and replace each rating with that average. This makes predictions more accurate and easier. There was also one null value that we will drop because it won't make a difference across the whole dataset. We also drop duplicates to avoid redundancy. We also drop recipes with above 5000 calories so it doesn’t skew predictions and visualizations as much and considering recipes with more than 5000 calories are much less than 1% of the dataset it won’t matter. 
 
 Here is the head of the dataframe 
 
-div>
+<div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -141,7 +141,7 @@ div>
 
 ### Bivariate Analysis
 
-I performed Bivariate Analysis on the dataset at multiple columns with the average rating columns
+I performed Bivariate Analysis on multiple columns within my dataset with the average rating column. Here are some scatter plots below:
 
 <iframe
   src="pics/DS398SUGAR.html"
@@ -150,14 +150,12 @@ I performed Bivariate Analysis on the dataset at multiple columns with the avera
   frameborder="0"
 ></iframe>
 
-
 <iframe
   src="pics/DS398SALT.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
-
 
 <iframe
   src="pics/DS398PROT.html"
@@ -166,8 +164,7 @@ I performed Bivariate Analysis on the dataset at multiple columns with the avera
   frameborder="0"
 ></iframe>
 
-
-As you can see as the levels of Sugar, Sodium, and Protein all increase the rating also increases. It is worth to note that the relationships aren't exactly linear so our predictions will not be perfect because some points have different ratings but the same nutrients. It also ism worth to note that protein has some low rated outliers so there may be more of a negative correlation compared to Sugar and Sodium.
+As you can see as the levels of Sugar, Sodium, and Protein all increase the rating also increases. It is worth to note that the relationships aren't exactly linear so our predictions will not be perfect because some points have different ratings but the same amount of nutrients. It also is worth to note that protein has some low rated outliers so there may be more of a negative correlation compared to Sugar and Sodium.
 
 ### Univariate Analysis
 
@@ -178,12 +175,11 @@ As you can see as the levels of Sugar, Sodium, and Protein all increase the rati
   frameborder="0"
 ></iframe>
 
-
-The distribution shows that most recipes contain less than 30 grams of protein. Although protein is healthy it can cause some people gut digestions and just overall not taste as good so most recipes contain little protein.
+The distribution shows that most recipes contain less than 30 grams of protein and is therefore right skewed. Although protein is healthy it can cause some people gut digestion issues and just overall not taste as good so most recipes contain little protein. 
 
 ### Interesting Aggregates
 
-div>
+<div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -276,7 +272,7 @@ My Baseline Model is a simple linear regression model. The features are the prev
 
 ## Final Model
 
-For my Final Model I decided to add two new features, 'saturated fat (PDV)' and 'protein'. I decided to get rid of 'total fat' because a smaller subset may help predictions better. I decided to add protein because it will probably help us be able to predict lower ratings better based off what we saw in the univariate analysis, I think the low concentrations of protein could also help us sift through the data better for a good model.
+For my Final Model I decided to add two new features, `saturated fat (PDV)` and `protein`. I decided to get rid of `total fat` because a smaller subset may help predictions better. I decided to add protein because it will probably help us be able to predict lower ratings better based off what we saw in the univariate analysis, I think the low concentrations of protein could also help us sift through the data better for a good model.
 
 I initally used built a pipeline including a ridge regression model. I first used the StandardScalar and QuantileTransfomer to normalize the features and create a normal distribution which I found helped predictions. I used GridSearchCV to find the best hyperparamters and then fit the model and obtained a training Mean Squared Error of 1.19077 and a testing Mean Squared Error 1.18370. This is better than our baseline model but not by enough so I decided to see if trying out classification would help. 
 
